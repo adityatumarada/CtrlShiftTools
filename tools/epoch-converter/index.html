@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epoch Converter - CtrlShiftTools</title>
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar__content">
+            <a href="../../index.html" class="navbar__logo">
+                <div class="logo-text">CtrlShiftTools</div>
+            </a>
+            <div class="navbar__nav">
+                <a href="./" class="navbar__link navbar__link--active">
+                    Epoch Converter
+                </a>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+                    <span class="theme-toggle__icon">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1 class="page-title">Epoch Converter</h1>
+                <p class="page-subtitle">Convert between Unix timestamps and human-readable dates</p>
+            </header>
+
+            <!-- GMT/Local Toggle -->
+            <div class="timezone-toggle">
+                <span class="timezone-toggle__label" id="local-label">Local</span>
+                <button 
+                    class="timezone-toggle__switch" 
+                    id="timezone-toggle"
+                    role="switch" 
+                    aria-checked="false"
+                    aria-labelledby="local-label gmt-label"
+                    tabindex="0"
+                >
+                    <div class="timezone-toggle__slider"></div>
+                </button>
+                <span class="timezone-toggle__label" id="gmt-label">GMT</span>
+            </div>
+
+            <!-- Current Time Section -->
+            <section class="current-time-card card card--glow">
+                <h2 class="card__title">Current Time</h2>
+                <div class="current-time__grid">
+                    <div class="time-display">
+                        <label class="time-display__label">Current Time</label>
+                        <div class="time-display__value">
+                            <code class="time-value" id="current-time-formatted">Loading...</code>
+                            <button class="copy-btn" data-copy="current-time-formatted" title="Copy to clipboard">
+                                <span class="copy-icon">📋</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="time-display">
+                        <label class="time-display__label">Epoch (seconds)</label>
+                        <div class="time-display__value">
+                            <code class="time-value" id="current-epoch-sec">0</code>
+                            <button class="copy-btn" data-copy="current-epoch-sec" title="Copy to clipboard">
+                                <span class="copy-icon">📋</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="time-display">
+                        <label class="time-display__label">Epoch (milliseconds)</label>
+                        <div class="time-display__value">
+                            <code class="time-value" id="current-epoch-ms">0</code>
+                            <button class="copy-btn" data-copy="current-epoch-ms" title="Copy to clipboard">
+                                <span class="copy-icon">📋</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Converter Section -->
+            <section class="converter-section">
+                <div class="converter-grid">
+                    <!-- Epoch → Date -->
+                    <div class="converter-card card">
+                        <h3 class="converter-card__title">Epoch → Date</h3>
+                        <div class="input-group">
+                            <label for="epoch-input" class="input-label">Enter epoch timestamp</label>
+                            <input
+                                type="text"
+                                id="epoch-input"
+                                class="input input--number"
+                                placeholder="1692539400 or 1692539400000"
+                                autocomplete="off"
+                            />
+                            <div class="input-help">Accepts seconds or milliseconds</div>
+                        </div>
+                        <div id="epoch-results" class="results-section hidden">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Date → Epoch -->
+                    <div class="converter-card card">
+                        <h3 class="converter-card__title">Date → Epoch</h3>
+                        <div class="input-group">
+                            <label for="date-input" class="input-label">Select date and time</label>
+                            <div class="input-with-button">
+                                <input
+                                    type="datetime-local"
+                                    id="date-input"
+                                    class="input input--datetime"
+                                />
+                                <button id="set-now-btn" class="btn-secondary" type="button">
+                                    Now
+                                </button>
+                            </div>
+                        </div>
+                        <div id="date-results" class="results-section hidden">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Copy Success Toast -->
+    <div id="copy-toast" class="copy-toast hidden">
+        <div class="copy-toast__content">
+            <span class="copy-toast__icon">✓</span>
+            <span class="copy-toast__text">Copied to clipboard!</span>
+        </div>
+    </div>
+
+    <script src="../../theme-toggle.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CtrlShiftTools - Developer Tools</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar__content">
+            <a href="index.html" class="navbar__logo">
+                <div class="logo-text">CtrlShiftTools</div>
+            </a>
+            <div class="navbar__nav">
+                <a href="tools/epoch-converter/" class="navbar__link">
+                    Epoch Converter
+                </a>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+                    <span class="theme-toggle__icon">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="home-container">
+            <div class="hero-section">
+                <h1 class="hero-title">CtrlShiftTools</h1>
+                <p class="hero-subtitle">Handy developer tools — fast, minimal, and to the point.</p>
+
+                <!-- Tools Grid - Compact Design -->
+                <div class="tools-grid">
+                    <!-- Row 1 - Available Tools -->
+                    <a href="tools/epoch-converter/" class="tool-card">
+                        <div class="tool-card__icon">⏰</div>
+                        <div class="tool-card__content">
+                            <h3 class="tool-card__title">Epoch Converter</h3>
+                            <p class="tool-card__description">Unix timestamps ↔ dates</p>
+                        </div>
+                    </a>
+
+                    <!-- Row 1 - Coming Soon Tools -->
+                    <div class="tool-card tool-card--coming-soon">
+                        <div class="tool-card__icon">📝</div>
+                        <div class="tool-card__content">
+                            <h3 class="tool-card__title">JSON Formatter</h3>
+                            <p class="tool-card__description">Format & validate JSON</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 - More Coming Soon -->
+                    <div class="tool-card tool-card--coming-soon">
+                        <div class="tool-card__icon">🔐</div>
+                        <div class="tool-card__content">
+                            <h3 class="tool-card__title">Base64 Encoder</h3>
+                            <p class="tool-card__description">Encode & decode Base64</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-card--coming-soon">
+                        <div class="tool-card__icon">🎨</div>
+                        <div class="tool-card__content">
+                            <h3 class="tool-card__title">Color Palette</h3>
+                            <p class="tool-card__description">Generate color schemes</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-card--coming-soon">
+                        <div class="tool-card__icon">🧮</div>
+                        <div class="tool-card__content">
+                            <h3 class="tool-card__title">Hash Generator</h3>
+                            <p class="tool-card__description">MD5, SHA1, SHA256 hashes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coming-soon-note">
+                    <p>More tools coming soon! <span class="emoji">🚀</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
