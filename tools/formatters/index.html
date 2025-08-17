@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatters - CtrlShiftTools</title>
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar__content">
+            <a href="../../index.html" class="navbar__logo">
+                <div class="logo-text">CtrlShiftTools</div>
+            </a>
+            <div class="navbar__nav">
+                <a href="../epoch-converter/" class="navbar__link">Epoch Converter</a>
+                <a href="./" class="navbar__link navbar__link--active">Text Formatters</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+                    <span class="theme-toggle__icon">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1 class="page-title">Text Formatters</h1>
+                <p class="page-subtitle">Select a text format below to process your data</p>
+            </header>
+            <section class="tool-select-section">
+                <label for="tool-select" class="tool-select-label">What text format are you inputting?</label>
+                <select id="tool-select" class="tool-select">
+                    <option value="json">JSON</option>
+                    <option value="xml">XML</option>
+                </select>
+            </section>
+            <section id="formatter-section" class="formatter-section">
+                <div class="formatter-flex">
+                    <div class="formatter-input-block">
+                        <textarea id="format-input" class="format-input"
+                            placeholder="Paste your text here..."></textarea>
+                        <button id="format-btn" class="format-btn">Format</button>
+                        <div id="error-message" class="error-message"></div>
+                    </div>
+                    <div class="formatter-output-block">
+                        <pre id="format-output" class="format-output"></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="../../theme-toggle.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
